@@ -59,7 +59,6 @@ public class Task01 {
 
     private static String maskingEmail(String str) {
         StringBuilder stringBuilder = new StringBuilder();
-        System.out.println(str);
         boolean key = false;
         for (int i = 0; i < str.length() - 1; i++) {
             if (str.charAt(i) == '@') {
