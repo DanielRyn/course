@@ -7,14 +7,17 @@ import java.util.stream.Stream;
 
 public class Task01 {
     public static void main(String[] args) {
-        System.out.println("\"" +
-                masking("<client>что то тут есть...<data>79991113344;danil1872@yandex.ru;Даниилов Даниил Даниилович</data></client>") + "\"");
+        System.out.println("Test №1");
+        System.out.println("\t" + masking("<client>что то тут есть...<data>79991113344;danil1872@yandex.ru;Даниилов Даниил Даниилович</data></client>"));
+        System.out.println("Test №2");
+        System.out.println("\t" + masking("<client>что то тут есть...<data>79991113344;danil1872@yandex.ru</data></client>"));
     }
 
     public static String masking(String str) {
         List<String> list = separationString(str);
-        if (list.size() == 1)
+        if (list.size() == 1) {
             return list.toString().replaceAll("\\[", "").replaceAll("]", "");
+        }
         StringBuilder stringBuilder = new StringBuilder();
         String[] strings = list.get(1).split(";");
         stringBuilder.append(list.get(0));
